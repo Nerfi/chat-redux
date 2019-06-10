@@ -61,4 +61,16 @@ export function createMessage(channel, author, content){
     body: JSON.stringify(body) // we want string on the body
     // because is and chat app?
   }).then(r => r.json());
+
+  return {
+  type: MESSAGE_POSTED,
+  payload: promise
+  };
+}
+
+export function selectChannel(channel) {
+  return {
+    type: CHANNEL_SELECTED,
+    payload: channel
+  };
 }

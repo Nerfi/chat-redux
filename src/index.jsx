@@ -18,7 +18,7 @@ import selectedChannelReducer from './reducers/selected_channel_reducer';
 //lewagon solution i think its because we want
 // the state to be null
 
-const identityReducer = (state = null) => state;
+
 
 //const initialState = {
   // juan:trying to set up the redux state tree
@@ -40,11 +40,14 @@ const identityReducer = (state = null) => state;
 //});
 
 //lewagon
+
+const identityReducer = (state = null) => state;
+
 const initialState = {
   messages: [],
   channels: [ 'general', 'react', 'paris' ],
   currentUser: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
-  //idk why we do this in line 30?
+  //idk why we do this in line 46?
   selectedChannel: 'general'
 };
 
@@ -64,7 +67,7 @@ const middlewares = applyMiddleware(reduxPromise,logger);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  //in line 68 we call the const like the promise for the API
+  //in line 71 we call the const like the promise for the API
   <Provider store={store}>
     <App />
   </Provider>,
